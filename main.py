@@ -25,6 +25,23 @@ def div(num1, num2):
     'div' : div(num1,num2)
 }[operation]"""                    #Without this '[operation]' tutti i valori verrebbero printati
 
+def runOperation(operation, num1, num2):
+    """Determines the operation ro run based on the operation argument which should be passed in as an int"""
+    if (operation == 1):
+        print("Adding...")
+        print(add(num1, num2))
+    elif (operation == 2):
+        print("Subtracting...")
+        print(sub(num1, num2))
+    elif (operation == 3):
+        print("Multiplying...")
+        print(mul(num1, num2))
+    elif (operation == 4):
+        print("Dividing...")
+        print(div(num1, num2))
+    else:
+        print("Input incorrect")
+
 def main():
     for i in range(3):
     #user_continue = True
@@ -43,21 +60,8 @@ def main():
                 # return # Exit program 'cause of an error #not needed anymore perché richiede l'input all'utente
             except:
                 print("Unknown error")
-        # Determine operation
-        if(operation==1):
-            print("Adding...")
-            print(add(num1, num2))
-        elif(operation==2):
-            print("Subtracting...")
-            print(sub(num1, num2))
-        elif(operation==3):
-            print("Multiplying...")
-            print(mul(num1, num2))
-        elif(operation==4):
-            print("Dividing...")
-            print(div(num1, num2))
-        else:
-            print("Input incorrect")
+            # Determine operation
+            runOperation(operation, num1, num2)
         # Ask uer to continue
             """user_yn = input("Would you like to run another calculation? Type 'y' for yes, other any value to exit")
             if (user_yn!= 'y'):
